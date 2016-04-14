@@ -11,11 +11,11 @@ package edu.iit.cs445.s2016.aahmed22.delectable.service;
  */
 public class Menu {
     private int menuid;
-    private Food [] allFoods;
+    private Food [] menuItems;
 
     public Menu(int menuid, Food[] allFoods) {
         this.menuid = menuid;
-        this.allFoods = allFoods;
+        this.menuItems = allFoods;
     }
 
     public int getMenuid() {
@@ -26,17 +26,17 @@ public class Menu {
         this.menuid = menuid;
     }
 
-    public Food[] getAllFoods() {
-        return allFoods;
+    public Food[] getMenuItems() {
+        return menuItems;
     }
 
-    public void setAllFoods(Food[] allFoods) {
-        this.allFoods = allFoods;
+    public void setMenuItems(Food[] allFoods) {
+        this.menuItems = allFoods;
     }
 
     @Override
     public String toString() {
-        return "Menu{" + "menuid=" + menuid + ", allFoods=" + allFoods + '}';
+        return "Menu{" + "menuid=" + menuid + ", allFoods=" + menuItems + '}';
     }
     
 }
