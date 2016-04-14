@@ -14,12 +14,12 @@ import java.util.Objects;
 public class Food {
     private int foodid;
     private String name; 
-    private String category;
+    private String [] category;
     private int calories;
     private int numOfPeople;
     private double price;
 
-    public Food(int foodid, String name, String category, int calories, int numOfPeople, double price) {
+    public Food(int foodid, String name, String [] category, int calories, int numOfPeople, double price) {
         this.foodid = foodid;
         this.name = name;
         this.category = category;
@@ -44,11 +44,11 @@ public class Food {
         this.name = name;
     }
 
-    public String getCategory() {
+    public String [] getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(String [] category) {
         this.category = category;
     }
 

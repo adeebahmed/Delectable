@@ -10,5 +10,27 @@ package edu.iit.cs445.s2016.aahmed22.delectable.service;
  * @author adeeb
  */
 public class Report {
-    Order [] orders;
+    private Order [] orders;
+
+    public Report(Order[] orders) {
+        this.orders = orders;
+    }
+
+    public Order[] getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Order[] orders) {
+        this.orders = orders;
+    }
+
+    @Override
+    public String toString() {
+        return "Report{" + "orders=" + orders + '}';
+    }
+    
+    public void createReport(){
+        
+    }
+    
 }
