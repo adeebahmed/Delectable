@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.iit.cs445.s2016.aahmed22.delectable.service;
+package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
 import java.util.Arrays;
 import java.util.Date;

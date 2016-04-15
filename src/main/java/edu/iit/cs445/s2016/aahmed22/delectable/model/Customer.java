@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.iit.cs445.s2016.aahmed22.delectable.service;
+package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
-import java.util.Objects;
+
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author adeeb
  */
+@XmlRootElement
 public class Customer {
     private int customerid;
     private String firstname;
@@ -18,6 +20,10 @@ public class Customer {
     private String phonenumber;
     private String email;
 
+    public Customer(){
+        
+    }
+    
     public Customer(int customerid, String firstname, String lastname, String phonenumber, String email) {
         this.customerid = customerid;
         this.firstname = firstname;

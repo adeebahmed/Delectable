@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.iit.cs445.s2016.aahmed22.delectable.service;
+package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
 /**
  *
@@ -16,6 +16,10 @@ public class Menu {
     public Menu(int menuid, Food[] allFoods) {
         this.menuid = menuid;
         this.menuItems = allFoods;
+    }
+
+    public Menu(int menuid) {
+        this.menuid = menuid;
     }
 
     public int getMenuid() {

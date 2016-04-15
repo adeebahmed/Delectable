@@ -3,24 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.iit.cs445.s2016.aahmed22.delectable.service;
+package edu.iit.cs445.s2016.aahmed22.delectable.model;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author adeeb
  */
 public class Report {
-    private Order [] orders;
+    private ArrayList<Order> [] orders;
 
-    public Report(Order[] orders) {
+    public Report(ArrayList<Order>[] orders) {
         this.orders = orders;
     }
 
-    public Order[] getOrders() {
+    public ArrayList<Order>[] getOrders() {
         return orders;
     }
 
-    public void setOrders(Order[] orders) {
+    public void setOrders(ArrayList<Order>[] orders) {
         this.orders = orders;
     }
 
@@ -28,9 +30,4 @@ public class Report {
     public String toString() {
         return "Report{" + "orders=" + orders + '}';
     }
-    
-    public void createReport(){
-        
-    }
-    
 }

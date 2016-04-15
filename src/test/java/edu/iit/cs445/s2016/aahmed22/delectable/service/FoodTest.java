@@ -5,6 +5,7 @@
  */
 package edu.iit.cs445.s2016.aahmed22.delectable.service;
 
+import edu.iit.cs445.s2016.aahmed22.delectable.model.Food;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
