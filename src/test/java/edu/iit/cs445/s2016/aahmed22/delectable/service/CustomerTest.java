@@ -6,6 +6,9 @@
 package edu.iit.cs445.s2016.aahmed22.delectable.service;
 
 import edu.iit.cs445.s2016.aahmed22.delectable.model.Customer;
+import edu.iit.cs445.s2016.aahmed22.delectable.model.Food;
+import edu.iit.cs445.s2016.aahmed22.delectable.model.Order;
+import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,8 +18,28 @@ import static org.junit.Assert.*;
  */
 public class CustomerTest {
     private Customer c;
+    
+    /*Categories*/
+    private String [] nomeat = {"Vegan", "Vegetarian"};
+    private String [] nodairy = {"Dairy Free", "Gluten free"};
+    private String [] nogluten = {"Gluten free"};
+    
+    /*Foods*/
+    private Food vegidog = new Food(0, "Vegi dog",nomeat, 200, 1, 2.25);
+    private Food steak = new Food(1, "Steak",nodairy, 650, 1, 22.00);
+    private Food bread = new Food(2, "Gluten free French Bread", nogluten, 250, 1, 1.25);
+    
+    /*Order Items*/
+    private Food [] orderItems = {vegidog,steak,bread};
+    
     public CustomerTest() {
-          c = new Customer(0,"John", "doe","6303409897", "jdoe@gmail.com");
+        double total = 0;
+        for(int i = 0; i < orderItems.length; i++)
+            total += orderItems[i].getPrice();
+        Order o = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "open");
+        
+        Order [] orders = {o};
+        c = new Customer(0,"John", "doe","6303409897", "jdoe@gmail.com", orders);
     }
 
     /**
@@ -134,6 +157,38 @@ public class CustomerTest {
         
         c.setEmail(email);
         assertEquals(email, c.getEmail());
+        
+    }
+    
+     @Test
+    public void testGetOrders() {
+        System.out.println("getOrders");
+        
+        Order [] expResult = c.getOrders();
+        Order [] result = c.getOrders();
+        assertArrayEquals(expResult, result);
+    }
+
+    /**
+     * Test of setEmail method, of class Customer.
+     */
+    @Test
+    public void testSetOrders() {
+        System.out.println("setOrders");
+        double total = 0;
+        
+        for(int i = 0; i < orderItems.length; i++)
+            total += orderItems[i].getPrice();
+        Order order1 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "closed");
+        
+        total = 0;
+        for(int i = 0; i < orderItems.length; i++)
+            total += orderItems[i].getPrice();
+        Order order2 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "open");
+        
+        Order [] orders = {order1,order2};
+        c.setOrders(orders);
+        assertArrayEquals(orders, c.getOrders());
         
     }
     

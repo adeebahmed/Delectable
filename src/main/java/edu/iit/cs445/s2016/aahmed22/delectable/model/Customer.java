@@ -19,17 +19,19 @@ public class Customer {
     private String lastname;
     private String phonenumber;
     private String email;
+    private Order [] orders;
 
     public Customer(){
         
     }
     
-    public Customer(int customerid, String firstname, String lastname, String phonenumber, String email) {
+    public Customer(int customerid, String firstname, String lastname, String phonenumber, String email, Order [] orders) {
         this.customerid = customerid;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phonenumber = phonenumber;
         this.email = email;
+        this.orders = orders;
     }
 
     public int getCustomerid() {
@@ -71,11 +73,18 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public Order [] getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Order [] orders) {
+        this.orders = orders;
+    }
 
     @Override
     public String toString() {
-        return "Customer{" + "customerid=" + customerid + ", firstname=" + firstname + ", lastname=" + lastname + ", phonenumber=" + phonenumber + ", email=" + email + '}';
+        return "Customer{" + "customerid=" + customerid + ", firstname=" + firstname + ", lastname=" + lastname + ", phonenumber=" + phonenumber + ", email=" + email + ", orders=" + orders + '}';
     }
-
     
 }
