@@ -38,4 +38,44 @@ public class CustomerResource {
                     return Response.ok(customers.get(i)).build();
             return Response.ok("[{"+ customerid + "}, {No such customer exits}]").build();
         }
+        
+        @GET
+        @Produces(MediaType.APPLICATION_JSON)
+        @Path("find")
+        public Response getCustomerByLastName(@QueryParam("key") String key) {
+            List<Customer> customers = customerRepository.findAllCustomers();
+            
+            for(int i = 0; i < customers.size(); i++)
+                if(customers.get(i).getEmail().equals(key) || customers.get(i).getLastname().equals(key) || customers.get(i).getPhonenumber().equals(key))
+                    return Response.ok(customers.get(i)).build();
+            return Response.ok("[{"+ key + "}, {No such customer exits}]").build();
+        }
+        
+        /* Return all users who match the ?key=
+        
+        @GET
+        @Produces(MediaType.APPLICATION_JSON)
+        @Path("/find")
+        public Response [] getCustomerByLastName(@QueryParam("key") String key) {
+            List<Customer> customers = customerRepository.findAllCustomers();
+            Response [] keyValuePairs = null;
+            int keyIndex = 0;
+            
+            for(int i = 0; i < customers.size(); i++){
+                if(customers.get(i).getEmail().equals(key) || customers.get(i).getLastname().equals(key) || customers.get(i).getPhonenumber().equals(key)){
+                    keyValuePairs[keyIndex] = Response.ok(customers.get(i)).build();
+                    keyIndex++;
+                }
+            }
+            
+            if(keyValuePairs.length > 0){
+                return keyValuePairs;
+            }
+            else{
+                keyValuePairs[0] = Response.ok("[{"+ key + "}, {No such customer exits}]").build();
+                return keyValuePairs;
+            }
+        }
+        
+        */
 }

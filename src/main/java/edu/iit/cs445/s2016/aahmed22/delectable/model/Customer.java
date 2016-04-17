@@ -12,7 +12,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author adeeb
  */
-@XmlRootElement
 public class Customer {
     private int customerid;
     private String firstname;
