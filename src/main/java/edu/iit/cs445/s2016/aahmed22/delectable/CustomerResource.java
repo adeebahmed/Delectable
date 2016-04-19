@@ -50,7 +50,7 @@ public class CustomerResource {
                     return Response.ok(customers.get(i)).build();
             return Response.ok("[{"+ key + "}, {No such customer exits}]").build();
         }
-        
+}
         /* Return all users who match the ?key=
         
         @GET
@@ -77,5 +77,5 @@ public class CustomerResource {
             }
         }
         
-        */
-}
+        
+}*/

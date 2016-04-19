@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.iit.cs445.s2016.aahmed22.delectable.service;
+package edu.iit.cs445.s2016.aahmed22.delectable.tests;
 
 import edu.iit.cs445.s2016.aahmed22.delectable.model.Food;
 import edu.iit.cs445.s2016.aahmed22.delectable.model.Order;

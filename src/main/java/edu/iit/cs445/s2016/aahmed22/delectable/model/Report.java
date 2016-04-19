@@ -12,10 +12,30 @@ import java.util.ArrayList;
  * @author adeeb
  */
 public class Report {
+    private int reportId;
+    private String reportName;
     private ArrayList<Order> [] orders;
 
-    public Report(ArrayList<Order>[] orders) {
+    public Report(int reportId, String reportName, ArrayList<Order>[] orders) {
+        this.reportId = reportId;
+        this.reportName = reportName;
         this.orders = orders;
+    }
+
+    public int getReportId() {
+        return reportId;
+    }
+
+    public void setReportId(int reportId) {
+        this.reportId = reportId;
+    }
+
+    public String getReportName() {
+        return reportName;
+    }
+
+    public void setReportName(String reportName) {
+        this.reportName = reportName;
     }
 
     public ArrayList<Order>[] getOrders() {
@@ -28,6 +48,6 @@ public class Report {
 
     @Override
     public String toString() {
-        return "Report{" + "orders=" + orders + '}';
+        return "Report{" + "reportId=" + reportId + ", reportName=" + reportName + ", orders=" + orders + '}';
     }
 }
