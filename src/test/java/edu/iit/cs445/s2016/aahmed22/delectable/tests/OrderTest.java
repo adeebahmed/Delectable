@@ -36,7 +36,7 @@ public class OrderTest {
         for(int i = 0; i < orderItems.length; i++)
             total += orderItems[i].getPrice();
         
-        o = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "open");
+        o = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), new Date(2016,4,20), "open");
     }
 
     /**
@@ -195,6 +195,28 @@ public class OrderTest {
         Date date = new Date(1995,8,26);
         o.setDate(date);
         assertEquals(date, o.getDate());
+    }
+    
+        /**
+     * Test of getDeliveryDate method, of class Order.
+     */
+    @Test
+    public void testGetDeliveryDate() {
+        System.out.println("getDeliveryDate");
+        Date expResult = new Date(2016,4,20);
+        Date result = o.getDeliveryDate();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of setDeliveryDate method, of class Order.
+     */
+    @Test
+    public void testSetDeliveryDate() {
+        System.out.println("setDeliveryDate");
+        Date date = new Date(1995,8,26);
+        o.setDeliveryDate(date);
+        assertEquals(date, o.getDeliveryDate());
     }
 
     /**

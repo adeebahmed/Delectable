@@ -36,7 +36,7 @@ public class CustomerTest {
         double total = 0;
         for(int i = 0; i < orderItems.length; i++)
             total += orderItems[i].getPrice();
-        Order o = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "open");
+        Order o = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), new Date(2016,4,20), "open");
         
         Order [] orders = {o};
         c = new Customer(0,"John", "doe","6303409897", "jdoe@gmail.com", orders);
@@ -179,12 +179,12 @@ public class CustomerTest {
         
         for(int i = 0; i < orderItems.length; i++)
             total += orderItems[i].getPrice();
-        Order order1 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "closed");
+        Order order1 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), new Date(2016,4,20), "closed");
         
         total = 0;
         for(int i = 0; i < orderItems.length; i++)
             total += orderItems[i].getPrice();
-        Order order2 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), "open");
+        Order order2 = new Order(0, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(), new Date(2016,4,20), "open");
         
         Order [] orders = {order1,order2};
         c.setOrders(orders);

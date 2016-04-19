@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class Report {
     private int reportId;
     private String reportName;
-    private ArrayList<Order> [] orders;
+    private Order [] orders;
 
-    public Report(int reportId, String reportName, ArrayList<Order>[] orders) {
+    public Report(int reportId, String reportName, Order[] orders) {
         this.reportId = reportId;
         this.reportName = reportName;
         this.orders = orders;
@@ -38,11 +38,11 @@ public class Report {
         this.reportName = reportName;
     }
 
-    public ArrayList<Order>[] getOrders() {
+    public Order[] getOrders() {
         return orders;
     }
 
-    public void setOrders(ArrayList<Order>[] orders) {
+    public void setOrders(Order[] orders) {
         this.orders = orders;
     }
 

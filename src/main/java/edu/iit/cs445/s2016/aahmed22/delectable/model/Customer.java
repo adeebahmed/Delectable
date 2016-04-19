@@ -5,9 +5,6 @@
  */
 package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
-
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  *
  * @author adeeb
@@ -85,5 +82,11 @@ public class Customer {
     public String toString() {
         return "Customer{" + "customerid=" + customerid + ", firstname=" + firstname + ", lastname=" + lastname + ", phonenumber=" + phonenumber + ", email=" + email + ", orders=" + orders + '}';
     }
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        return hash;
+    }
+
 }

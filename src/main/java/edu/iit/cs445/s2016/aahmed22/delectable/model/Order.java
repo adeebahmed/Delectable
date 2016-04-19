@@ -21,9 +21,10 @@ public class Order {
     private String billingInfo;
     private String specialInstruction;
     private Date date;
+    private Date deliveryDate;
     private String orderStatus;
 
-    public Order(int orderid, Food[] orderItems, double total, String shippingAddress, String billingInfo, String specialInstruction, Date date, String orderStatus) {
+    public Order(int orderid, Food[] orderItems, double total, String shippingAddress, String billingInfo, String specialInstruction, Date date, Date deliveryDate, String orderStatus) {
         this.orderid = orderid;
         this.orderItems = orderItems;
         this.total = total;
@@ -31,6 +32,7 @@ public class Order {
         this.billingInfo = billingInfo;
         this.specialInstruction = specialInstruction;
         this.date = date;
+        this.deliveryDate = deliveryDate;
         this.orderStatus = orderStatus;
     }
 
@@ -89,6 +91,14 @@ public class Order {
     public void setDate(Date date) {
         this.date = date;
     }
+    
+    public Date getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(Date deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
 
     public String getOrderStatus() {
         return orderStatus;
@@ -100,7 +110,9 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" + "orderid=" + orderid + ", orderItems=" + orderItems + ", total=" + total + ", shippingAddress=" + shippingAddress + ", billingInfo=" + billingInfo + ", specialInstruction=" + specialInstruction + ", date=" + date + ", orderStatus=" + orderStatus + '}';
+        return "Order{" + "orderid=" + orderid + ", orderItems=" + orderItems + ", total=" + total + ", shippingAddress=" + shippingAddress + ", billingInfo=" + billingInfo + ", specialInstruction=" + specialInstruction + ", date=" + date + ", deliveryDate=" + deliveryDate + ", orderStatus=" + orderStatus + '}';
     }
+
+
 
 }
