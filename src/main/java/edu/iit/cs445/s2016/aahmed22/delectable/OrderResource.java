@@ -48,9 +48,32 @@ public class OrderResource {
             if (orders.get(i).getOrderid() == orderid)
                 return Response.ok(orders.get(i)).build();
 
-        return Response.ok("[{"+ orderid + "}, {No such report exits}]").build();
+        return Response.status(Response.Status.NOT_FOUND).build(); //Response.ok("[{"+ orderid + "}, {No such report exits}]").build();
     }
     
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getdate")
+    public Response getOrderByDate(@QueryParam("date") String d){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        Date date = null;
+        
+        try {
+              date = formatter.parse(d);
+        } catch (ParseException ex) {
+            Logger.getLogger(OrderResource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (date != null){
+            for(int i =0; i<orders.size(); i++)
+                if (orders.get(i).getDate().getYear() == date.getYear() && orders.get(i).getDate().getMonth() == date.getMonth() && orders.get(i).getDate().getDay() == date.getDay())
+                    return Response.ok(orders.get(i)).build();
+        } 
+        
+        return Response.ok("[{"+ date + "}, {No such order exits}]").build();
+    }
+    
+    /*
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/getdate")
@@ -79,4 +102,5 @@ public class OrderResource {
         else
             return Response.ok("[{"+ date + "}, {No such order exits}]").build();
     }
+    */
 }

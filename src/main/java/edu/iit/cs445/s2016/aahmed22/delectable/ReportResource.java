@@ -42,7 +42,7 @@ public class ReportResource {
             if (reports.get(i).getReportId() == reportid)
                 return Response.ok(reports.get(i)).build();
 
-        return Response.ok("[{"+ reportid + "}, {No such report exits}]").build();
+        return Response.status(Response.Status.BAD_REQUEST).build(); // Response.ok("[{"+ reportid + "}, {No such report exits}]").build();
     }
     
     /*@GET

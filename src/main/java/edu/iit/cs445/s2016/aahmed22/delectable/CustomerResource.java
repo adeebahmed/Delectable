@@ -36,7 +36,7 @@ public class CustomerResource {
             for(int i = 0; i < customers.size(); i++)
                 if(customers.get(i).getCustomerid()== customerid)
                     return Response.ok(customers.get(i)).build();
-            return Response.ok("[{"+ customerid + "}, {No such customer exits}]").build();
+            return Response.status(Response.Status.BAD_REQUEST).build(); //Response.ok("[{"+ customerid + "}, {No such customer exits}]").build();
         }
         
         @GET
@@ -48,7 +48,7 @@ public class CustomerResource {
             for(int i = 0; i < customers.size(); i++)
                 if(customers.get(i).getEmail().equals(key) || customers.get(i).getLastname().equals(key) || customers.get(i).getPhonenumber().equals(key))
                     return Response.ok(customers.get(i)).build();
-            return Response.ok("[{"+ key + "}, {No such customer exits}]").build();
+            return  Response.ok("[]").build();  //Response.ok("[{"+ key + "}, {No such customer exits}]").build();
         }
 }
         /* Return all users who match the ?key=

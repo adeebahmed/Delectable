@@ -5,11 +5,16 @@
  */
 package edu.iit.cs445.s2016.aahmed22.delectable.repository;
 
+import edu.iit.cs445.s2016.aahmed22.delectable.OrderResource;
 import edu.iit.cs445.s2016.aahmed22.delectable.model.Food;
 import edu.iit.cs445.s2016.aahmed22.delectable.model.Order;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +41,17 @@ public class OrderRepositoryStub implements OrderRepository {
         for(int i = 0; i < orderItems.length; i++)
             total += orderItems[i].getPrice();
         
-        Order o1 = new Order(1, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(),new Date(2016,4,20), "open");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+        String strOrderDate = "20160420";
+        Date orderDate = null;
+        
+        try {
+            orderDate = formatter.parse(strOrderDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(OrderResource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Order o1 = new Order(1, orderItems,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", orderDate,new Date(2016,4,21), "open");
         
         Food soup = new Food(0, "Hot soup",nodairy, 200, 1, 5.25);
         Food lobster = new Food(1, "Lobster",nodairy, 650, 1, 25.00);
@@ -47,7 +62,13 @@ public class OrderRepositoryStub implements OrderRepository {
         for(int i = 0; i < orderItems2.length; i++)
             total += orderItems2[i].getPrice();
         
-        Order o2 = new Order(2, orderItems2,total, "3333 South Wabash Ave.","credit card info", "Call when outside.", new Date(),new Date(2016,4,20), "open");
+        strOrderDate = "20160419";
+        try {
+            orderDate = formatter.parse(strOrderDate);
+        } catch (ParseException ex) {
+            Logger.getLogger(OrderResource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Order o2 = new Order(2, orderItems2,total, "250 West 31st St.","credit card info", "Call when outside.", orderDate,new Date(2016,4,21), "open");
         
         orders.add(o1);
         orders.add(o2);
