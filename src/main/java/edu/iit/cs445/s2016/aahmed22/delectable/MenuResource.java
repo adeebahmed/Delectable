@@ -37,7 +37,7 @@ public class MenuResource {
                 if (menus.get(i).getMenuid() == menuid)
                     return Response.ok(menus.get(i)).build();
             
-            return Response.status(Response.Status.BAD_REQUEST).build(); //Response.ok("[{"+ menuid + "}, {No such menu exits}]").build();
+            return Response.status(Response.Status.BAD_REQUEST).build(); 
     }
     
 }

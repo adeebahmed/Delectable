@@ -5,9 +5,7 @@
  */
 package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Objects;
 
 /**
  *
@@ -112,7 +110,4 @@ public class Order {
     public String toString() {
         return "Order{" + "orderid=" + orderid + ", orderItems=" + orderItems + ", total=" + total + ", shippingAddress=" + shippingAddress + ", billingInfo=" + billingInfo + ", specialInstruction=" + specialInstruction + ", date=" + date + ", deliveryDate=" + deliveryDate + ", orderStatus=" + orderStatus + '}';
     }
-
-
-
 }

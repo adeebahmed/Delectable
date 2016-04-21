@@ -5,7 +5,6 @@
  */
 package edu.iit.cs445.s2016.aahmed22.delectable.model;
 
-import java.util.ArrayList;
 
 /**
  *

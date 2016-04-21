@@ -45,16 +45,4 @@ public class ReportResource {
         return Response.status(Response.Status.BAD_REQUEST).build(); // Response.ok("[{"+ reportid + "}, {No such report exits}]").build();
     }
     
-    /*@GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{rid : .+}")
-    public Response getReportsByIdandRange(@PathParam("rid") int reportid, @QueryParam("[?start_date=") Date startDate,@QueryParam("&end_date=") Date endDate){
-        Report r;
-        for(int i =0; i<reports.size(); i++)
-            if (reports.get(i).getReportId() == reportid)
-                r = reports.get(i);
-
-        return Response.ok("[{"+ reportid + "}, {No such report exits}]").build();
-    }*/
-    
 }

@@ -5,6 +5,7 @@ Configuration instuctions
 You will need JDK 1.8. Run these commands to install JDK:
 wget http://sukharevd.net/static/files/blog/oracle-jdk/oracle-jdk-install.sh -O oracle-jdk-install.sh
 sudo bash oracle-jdk-install.sh
+If you need maven, the jre and jdk use the makefile instead: Delectable/Makefile
 
 Build and deploy:
 Project is a maven based project, so there is no build script required. 
